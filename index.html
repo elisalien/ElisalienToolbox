@@ -5,7 +5,11 @@
   <title>Elisalien's Freebies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    html, body {
+      height: 100%;
+    }
     body {
+      min-height: 100vh;
       background: url('https://cdn.jsdelivr.net/gh/kawaii-assets/backgrounds/kawaii-stars-pink.gif');
       font-family: 'MS Sans Serif', 'Comic Sans MS', cursive, sans-serif;
       margin: 0;
@@ -28,11 +32,13 @@
       border: 2px outset #d8d0ee;
       box-shadow: 0 6px 24px rgba(180,131,255,0.14);
       width: 390px;
-      margin: 48px auto 32px;
+      max-width: 97vw;
+      margin: 48px auto 32px auto;
       border-radius: 8px;
       padding: 18px 24px 30px 24px;
       position: relative;
       z-index: 1;
+      transition: width 0.2s, max-width 0.2s, padding 0.2s;
     }
     h1 {
       text-align: center;
@@ -71,6 +77,8 @@
       transition: background 0.2s;
       box-shadow: 0 2px 10px rgba(183, 180, 255, 0.10);
       position: relative;
+      cursor: pointer;
+      word-break: break-word;
     }
     .link-box:hover {
       background: linear-gradient(94deg, #fff0fd 0%, #efa6f8 100%);
@@ -83,6 +91,7 @@
       margin-right: 10px;
       border-radius: 50%;
       border: 1px solid #dab3ef;
+      flex-shrink: 0;
     }
     a {
       color: #883cf9;
@@ -94,14 +103,45 @@
       color: #ff5fc6;
       text-decoration: underline wavy;
     }
+    @media (max-width: 550px) {
+      .window98 {
+        width: 99vw;
+        max-width: 99vw;
+        padding: 10.5vw 3vw 12vw 3vw;
+        box-sizing: border-box;
+        min-height: 47vw;
+        margin: 19vw auto 7vw auto;
+      }
+      h1 {
+        font-size: 1.1em;
+        margin-bottom: 18px;
+      }
+      .link-box {
+        font-size: 1em;
+        padding: 12px 8px;
+      }
+      .glitter {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+      }
+    }
+    @media (max-width: 370px) {
+      .window98 {
+        padding: 4vw 1vw 8vw 1vw;
+      }
+      .link-box {
+        font-size: 0.96em;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="window98">
     <h1>Elisalien's Freebies</h1>
-    <div class="links">
 
-       <div class="link-box">
+      </div>
+      <div class="link-box">
         <div class="glitter"></div>
         <a href="https://elisalien.github.io/crt-text/" target="_blank">
           CRT Text visualizer
@@ -121,8 +161,7 @@
           Free Resolume Sources 1 
         </a>
       </div>
-
-      <!-- To add more freebies, just copy the block below and adjust the URL/text -->
+      <!-- Add more links by duplicating the block below. -->
       <!--
       <div class="link-box">
         <div class="glitter"></div>
@@ -131,7 +170,6 @@
         </a>
       </div>
       -->
-
     </div>
   </div>
 </body>
