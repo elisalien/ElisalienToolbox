@@ -1,176 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Elisalien's Freebies</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    html, body {
-      height: 100%;
-    }
-    body {
-      min-height: 100vh;
-      background: url('https://cdn.jsdelivr.net/gh/kawaii-assets/backgrounds/kawaii-stars-pink.gif');
-      font-family: 'MS Sans Serif', 'Comic Sans MS', cursive, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #2f2d66;
-    }
-    body::before {
-      content: "";
-      display: block;
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      inset: 0;
-      background: rgba(255,255,255,0.49);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .window98 {
-      background: #fffbe9;
-      border: 2px outset #d8d0ee;
-      box-shadow: 0 6px 24px rgba(180,131,255,0.14);
-      width: 390px;
-      max-width: 97vw;
-      margin: 48px auto 32px auto;
-      border-radius: 8px;
-      padding: 18px 24px 30px 24px;
-      position: relative;
-      z-index: 1;
-      transition: width 0.2s, max-width 0.2s, padding 0.2s;
-    }
-    h1 {
-      text-align: center;
-      margin: 0 0 24px 0;
-      font-size: 1.85em;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #ffa3e5 40%, #a5e3ff 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: relative;
-    }
-    h1::after {
-      content: ' ✧*｡';
-      color: #f997ec;
-      font-size: 1.2em;
-      vertical-align: middle;
-      animation: sparkle 1.5s infinite alternate;
-    }
-    @keyframes sparkle {
-      from { opacity: 0.4;}
-      to   { opacity: 1;}
-    }
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .link-box {
-      background: linear-gradient(90deg, #efa6f8 0% 50%, #fff0fd 100%);
-      border: 2px solid #cfd3ed;
-      border-radius: 7px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      font-size: 1.09em;
-      transition: background 0.2s;
-      box-shadow: 0 2px 10px rgba(183, 180, 255, 0.10);
-      position: relative;
-      cursor: pointer;
-      word-break: break-word;
-    }
-    .link-box:hover {
-      background: linear-gradient(94deg, #fff0fd 0%, #efa6f8 100%);
-      border-color: #fbd0f9;
-    }
-    .glitter {
-      background: url('https://cdn.jsdelivr.net/gh/kawaii-assets/glitter/glitter7.gif');
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-      border-radius: 50%;
-      border: 1px solid #dab3ef;
-      flex-shrink: 0;
-    }
-    a {
-      color: #883cf9;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s;
-    }
-    a:hover {
-      color: #ff5fc6;
-      text-decoration: underline wavy;
-    }
-    @media (max-width: 550px) {
-      .window98 {
-        width: 99vw;
-        max-width: 99vw;
-        padding: 10.5vw 3vw 12vw 3vw;
-        box-sizing: border-box;
-        min-height: 47vw;
-        margin: 19vw auto 7vw auto;
-      }
-      h1 {
-        font-size: 1.1em;
-        margin-bottom: 18px;
-      }
-      .link-box {
-        font-size: 1em;
-        padding: 12px 8px;
-      }
-      .glitter {
-        width: 18px;
-        height: 18px;
-        margin-right: 6px;
-      }
-    }
-    @media (max-width: 370px) {
-      .window98 {
-        padding: 4vw 1vw 8vw 1vw;
-      }
-      .link-box {
-        font-size: 0.96em;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElisalienOS | Freebies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-url: url('https://i.imgur.com/uRyt224.gif'); /* Fond d'écran pixel art ville */
+            --main-bg: #D6D6D6; /* Gris clair pour les fenêtres */
+            --title-bar-bg: linear-gradient(90deg, #12007A 0%, #9C8FF3 100%);
+            --text-color: #222;
+            --border-outset: 2px outset #ffffff;
+            --border-inset: 2px inset #ffffff;
+            --hover-color: #ff5fc6;
+            --active-color: #883cf9;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Empêche le défilement du fond d'écran */
+        }
+
+        body {
+            background-image: var(--background-url);
+            background-size: cover;
+            background-position: center;
+            font-family: 'Pixelify Sans', 'MS Sans Serif', cursive, sans-serif;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .desktop {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .window {
+            background: var(--main-bg);
+            border: var(--border-outset);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            max-width: 95vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-bar {
+            background: var(--title-bar-bg);
+            padding: 5px 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+            user-select: none;
+        }
+
+        .title-bar-text {
+            flex-grow: 1;
+            padding-right: 10px;
+        }
+
+        .title-bar-controls {
+            display: flex;
+            gap: 3px;
+        }
+
+        .title-bar-controls button {
+            width: 18px;
+            height: 18px;
+            background: var(--main-bg);
+            border: var(--border-outset);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            padding: 0;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .window-body {
+            padding: 1rem;
+            border-top: 2px solid #808080;
+            flex-grow: 1;
+            overflow-y: auto; /* Permet le défilement si le contenu est trop grand */
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 0 0 1.5rem 0;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ffa3e5 40%, #a5e3ff 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: var(--main-bg);
+            border: var(--border-outset);
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.1s ease;
+        }
+
+        .link-button:hover {
+            background-color: #e6e6e6;
+            color: var(--hover-color);
+        }
+
+        .link-button:active {
+            border: var(--border-inset);
+            background-color: #cccccc;
+            color: var(--active-color);
+            transform: translate(1px, 1px);
+        }
+
+        .link-button .icon {
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--main-bg);
+            border-top: var(--border-outset);
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+        
+        .start-button {
+            border: var(--border-outset);
+            padding: 4px 12px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .start-button:active {
+             border: var(--border-inset);
+        }
+
+        .clock {
+            border: var(--border-inset);
+            padding: 4px 8px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .link-button {
+                font-size: 1em;
+                padding: 8px 10px;
+            }
+            .window-body {
+                padding: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="window98">
-    <h1>Elisalien's Freebies</h1>
 
-      </div>
-      <div class="link-box">
-        <div class="glitter"></div>
-        <a href="https://elisalien.github.io/crt-text/" target="_blank">
-          CRT Text visualizer
-        </a>
-      </div>
-      
-      <div class="link-box">
-        <div class="glitter"></div>
-        <a href="https://2031452099936.gumroad.com/l/Elisalien_linepatterns" target="_blank">
-          Free Resolume Loops
-        </a>
-      </div>
+    <div class="desktop">
+        <div class="window">
+            <div class="title-bar">
+                <div class="title-bar-text">Elisalien's Freebies.exe</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize">_</button>
+                    <button aria-label="Maximize">□</button>
+                    <button aria-label="Close">×</button>
+                </div>
+            </div>
+            <div class="window-body">
+                <h1>✧ Elisalien's Freebies ✧</h1>
 
-       <div class="link-box">
-        <div class="glitter"></div>
-        <a href="https://2031452099936.gumroad.com/l/ISFResolumeSources_10" target="_blank">
-          Free Resolume Sources 1 
-        </a>
-      </div>
-      <!-- Add more links by duplicating the block below. -->
-      <!--
-      <div class="link-box">
-        <div class="glitter"></div>
-        <a href="YOUR_LINK_HERE" target="_blank">
-          Description of Freebie
-        </a>
-      </div>
-      -->
+                <div class="links-container">
+                    <a href="https://elisalien.github.io/crt-text/" target="_blank" class="link-button">
+                        <span class="icon">💾</span>
+                        CRT Text visualizer
+                    </a>
+                    <a href="https://2031452099936.gumroad.com/l/Elisalien_linepatterns" target="_blank" class="link-button">
+                        <span class="icon">🎨</span>
+                        Free Resolume Loops
+                    </a>
+                    <a href="https://2031452099936.gumroad.com/l/ISFResolumeSources_10" target="_blank" class="link-button">
+                        <span class="icon">✨</span>
+                        Free Resolume Sources 1
+                    </a>
+                    </div>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <footer class="taskbar">
+        <div class="start-button">▶ START</div>
+        <div id="clock" class="clock">16:04</div>
+    </footer>
+
+    <script>
+        // Script simple pour l'horloge en temps réel
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Appel initial pour ne pas attendre 1 seconde
+    </script>
+
 </body>
 </html>
