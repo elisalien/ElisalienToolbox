@@ -4,6 +4,8 @@
 
 ![Platform](https://img.shields.io/badge/platform-Web-informational) ![Stack](https://img.shields.io/badge/stack-HTML%20%2F%20CSS%20%2F%20JS-orange)
 
+**[Open the page](https://elisalien.github.io/ElisalienToolbox/)**
+
 ## About
 
 A simple static page used to store and share links to Elisalien's free tools and content. It is styled as an old-school desktop: one "Elisalien's Freebies.exe" window with pixel-art buttons over a pastel pixel-art wallpaper, and a taskbar at the bottom.
@@ -21,7 +23,7 @@ Plus a retro window with title-bar buttons, a taskbar with a "START" button and 
 
 ## Getting started
 
-No build step and no dependencies to install: open `index.html` in a browser, or host it on any static host.
+No build step and no dependencies to install: open `index.html` in a browser, or host it on any static host (it is published with GitHub Pages).
 
 ## Tech stack
 
